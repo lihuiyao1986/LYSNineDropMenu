@@ -38,7 +38,11 @@ static NSTimeInterval duration = 0.25;
 
 #pragma mark -  显示的行数
 -(NSUInteger)rows{
-    return self.items.count / self.colums + 1;
+    if (self.items.count % self.colums == 0) {
+        return self.items.count / self.colums;
+    }else{
+        return self.items.count / self.colums + 1;
+    }
 }
 
 #pragma mark - 初始化配置
